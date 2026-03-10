@@ -19,8 +19,6 @@ A comprehensive reference for debugging, analyzing, and troubleshooting blockcha
 
 ## Categories
 
-### Batch 1 (Available Now)
-
 1. **Raw Tables: Ethereum**  
    `ethereum.transactions`, `ethereum.logs`, `ethereum.traces`, `ethereum.blocks`  
    (50 queries) → [raw_tables_ethereum.md](raw_tables_ethereum.md)
@@ -41,27 +39,25 @@ A comprehensive reference for debugging, analyzing, and troubleshooting blockcha
    Timeout fixes, `DATE_TRUNC` filtering, avoiding `SELECT *`, CTEs vs subqueries  
    (50 patterns) → [query_optimization.md](query_optimization.md)
 
-### Batch 2 (Coming Soon)
-
 6. **Trino SQL Patterns**  
    Trino-specific functions, array operations, JSON parsing, bytea manipulation  
-   (50 queries) → *trino_sql_patterns.md* 🔜
+   (50 queries) → [trino_sql_patterns.md](trino_sql_patterns.md)
 
 7. **Window Functions: On-Chain**  
    LAG/LEAD, running totals, ranking, moving averages for blockchain data  
-   (50 queries) → *window_functions_onchain.md* 🔜
+   (50 queries) → [window_functions_onchain.md](window_functions_onchain.md)
 
 8. **Support Triage Queries**  
    Customer debugging templates, transaction lookup, wallet analysis  
-   (50 queries) → *support_triage_queries.md* 🔜
+   (50 queries) → [support_triage_queries.md](support_triage_queries.md)
 
 9. **Dune API Reference**  
    API endpoints, query execution, result handling, rate limits  
-   (50 patterns) → *dune_api_reference.md* 🔜
+   (50 patterns) → [dune_api_reference.md](dune_api_reference.md)
 
 10. **Common Errors Reference**  
     Error messages, troubleshooting steps, edge cases  
-    (50 entries) → *common_errors_reference.md* 🔜
+    (50 entries) → [common_errors_reference.md](common_errors_reference.md)
 
 ---
 
@@ -164,4 +160,4 @@ MIT License - Feel free to use, modify, and share.
 ---
 
 **Footer**  
-Built by [CryptoAI-Jedi](https://github.com/CryptoAI-Jedi) | [View on GitHub](https://github.com/CryptoAI-Jedi/dune-sql-cheatsheet)
+Built by [CryptoAI-Jedi](https://github.com/CryptoAI-Jedi) | [View on GitHub](https://github.com/CryptoAI-Jedi/dune-sql-cheatsheets)
