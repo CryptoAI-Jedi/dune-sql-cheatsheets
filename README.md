@@ -2,7 +2,7 @@
 
 **500 production-ready Dune SQL queries for Customer Solutions Specialists**
 
-**Tags:** Dune Analytics, Trino SQL, Ethereum, Solana, DeFi, NFT, Web3 Data Analysis
+[![GitHub Pages](https://img.shields.io/badge/Live_Site-GitHub_Pages-blue?logo=github)](https://cryptoai-jedi.github.io/dune-sql-cheatsheets/)
 
 ---
 
