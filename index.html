@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dune SQL Cheatsheet</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f78166;
+            --accent-purple: #a371f7;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .card-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        
+        .card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 0.25rem;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .card-meta .count {
+            color: var(--accent-green);
+        }
+        
+        .card.coming-soon {
+            opacity: 0.6;
+        }
+        
+        .card.coming-soon .card-title::after {
+            content: ' 🔜';
+        }
+        
+        .context-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        
+        .context-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dune SQL Cheatsheet</h1>
+        <p class="subtitle">500 production-ready queries — field-ready reference for Dune Analytics</p>
+        
+        <div class="tags">
+            <span class="tag">Dune Analytics</span>
+            <span class="tag">Trino SQL</span>
+            <span class="tag">Ethereum</span>
+            <span class="tag">Solana</span>
+            <span class="tag">DeFi</span>
+            <span class="tag">NFT</span>
+            <span class="tag">Web3</span>
+        </div>
+        
+        <div class="context-box">
+            <p>Built for Customer Solutions Specialists, Support Engineers, and Data Analysts working with blockchain data. Covers raw tables, decoded contracts, Spellbook abstractions, and query optimization patterns.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Raw Tables</h2>
+            <div class="card-grid">
+                <a href="raw_tables_ethereum.md" class="card">
+                    <div class="card-title">Ethereum Raw Tables</div>
+                    <div class="card-desc">transactions, logs, traces, blocks</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → raw_tables_ethereum.md</div>
+                </a>
+                <a href="raw_tables_solana.md" class="card">
+                    <div class="card-title">Solana Raw Tables</div>
+                    <div class="card-desc">transactions, instruction_calls, account_activity</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → raw_tables_solana.md</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Decoded & Abstractions</h2>
+            <div class="card-grid">
+                <a href="decoded_contracts.md" class="card">
+                    <div class="card-title">Decoded Contracts</div>
+                    <div class="card-desc">ERC20 transfers, DEX trades, NFT trades, Aave, Uniswap, Compound</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → decoded_contracts.md</div>
+                </a>
+                <a href="spellbook_abstractions.md" class="card">
+                    <div class="card-title">Spellbook Abstractions</div>
+                    <div class="card-desc">tokens.erc20, prices.usd, dex.trades, nft.trades, labels</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → spellbook_abstractions.md</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Optimization & Patterns</h2>
+            <div class="card-grid">
+                <a href="query_optimization.md" class="card">
+                    <div class="card-title">Query Optimization</div>
+                    <div class="card-desc">Timeout fixes, DATE_TRUNC filtering, CTEs vs subqueries</div>
+                    <div class="card-meta"><span class="count">50 patterns</span> → query_optimization.md</div>
+                </a>
+                <a href="#" class="card coming-soon">
+                    <div class="card-title">Trino SQL Patterns</div>
+                    <div class="card-desc">Array operations, JSON parsing, bytea manipulation</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → trino_sql_patterns.md</div>
+                </a>
+                <a href="#" class="card coming-soon">
+                    <div class="card-title">Window Functions: On-Chain</div>
+                    <div class="card-desc">LAG/LEAD, running totals, ranking, moving averages</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → window_functions_onchain.md</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Support & Reference</h2>
+            <div class="card-grid">
+                <a href="#" class="card coming-soon">
+                    <div class="card-title">Support Triage Queries</div>
+                    <div class="card-desc">Customer debugging templates, transaction lookup, wallet analysis</div>
+                    <div class="card-meta"><span class="count">50 queries</span> → support_triage_queries.md</div>
+                </a>
+                <a href="#" class="card coming-soon">
+                    <div class="card-title">Dune API Reference</div>
+                    <div class="card-desc">API endpoints, query execution, result handling</div>
+                    <div class="card-meta"><span class="count">50 patterns</span> → dune_api_reference.md</div>
+                </a>
+                <a href="#" class="card coming-soon">
+                    <div class="card-title">Common Errors Reference</div>
+                    <div class="card-desc">Error messages, troubleshooting steps, edge cases</div>
+                    <div class="card-meta"><span class="count">50 entries</span> → common_errors_reference.md</div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Built by <a href="https://github.com/CryptoAI-Jedi">CryptoAI-Jedi</a> | <a href="https://github.com/CryptoAI-Jedi/dune-sql-cheatsheet">View on GitHub</a></p>
+            <p>See also: <a href="https://cryptoai-jedi.github.io/api-troubleshooting-cheatsheets/">API Troubleshooting Cheatsheets</a></p>
+        </div>
+    </div>
+</body>
+</html>
